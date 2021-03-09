@@ -56,6 +56,7 @@ public class Crowd : MonoBehaviour
     public void RemoveUnit(CrowdUnit unit)
     {
         Units.Remove(unit);
+        unit.Rigidbody.velocity = unit.Velocity * .2f;
         if (_isCrowdEmpty)
         {
             OnCrowdEmpty?.Invoke();
@@ -125,7 +126,9 @@ public class Crowd : MonoBehaviour
         float tempSpeed = _speed;
         _follower.followSpeed = _crowdFollowerSlowSpeed;
         _speed = _crowdSlowSpeed;
+
         yield return new WaitForSecondsRealtime(time);
+
         _follower.followSpeed = tempFollowSpeed;
         _speed = tempSpeed;
     }

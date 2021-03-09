@@ -498,7 +498,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.42
+  m_Radius: 0.25
   m_Height: 0.9801446
   m_Direction: 1
   m_Center: {x: -0.0000004948413, y: 0.45007303, z: 0.2}
@@ -531,6 +531,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Crowd: {fileID: 0}
+  Rigidbody: {fileID: 0}
+  Velocity: {x: 0, y: 0, z: 0}
 --- !u!1 &5718521683810120689
 GameObject:
   m_ObjectHideFlags: 0

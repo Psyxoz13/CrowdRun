@@ -6,12 +6,16 @@ public class CrowdUnit : MonoBehaviour
 {
     [HideInInspector] public Crowd Crowd;
 
+    [HideInInspector] public Rigidbody Rigidbody;
+    [HideInInspector] public Vector3 Velocity;
+
     private Vector3 _prevPosition;
-    private Vector3 _velocity;
     private Animator _animator;
 
     private void Awake()
     {
+        Rigidbody = GetComponent<Rigidbody>();
+
         _animator = GetComponent<Animator>();
         _prevPosition = transform.position;
     }
@@ -25,14 +29,14 @@ public class CrowdUnit : MonoBehaviour
     private void Update()
     {
         SetVelocity();
-        _animator.SetFloat("Speed", _velocity.magnitude);
+        _animator.SetFloat("Speed", Velocity.magnitude);
     }
 
     private void SetVelocity()
     {
         var offset = transform.position - _prevPosition;
         _prevPosition = transform.position;
-        _velocity = offset / Time.smoothDeltaTime;
+        Velocity = offset / Time.smoothDeltaTime;
     }
 
     private void FixedUpdate()
