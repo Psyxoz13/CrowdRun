@@ -5,6 +5,8 @@ public class Hole : MonoBehaviour
 {
     [SerializeField] private LayerMask _enterLayer;
     [SerializeField] private LayerMask _exitLayer;
+    [SerializeField] private float _downForce = 2f;
+    [SerializeField] private float _crowdSlowTime = 2f;
 
     private Collider _trigger;
 
@@ -20,6 +22,9 @@ public class Hole : MonoBehaviour
         {
             other.gameObject.layer = _exitLayer.GetNumber();
             _trigger.enabled = false;
+            unit.TryGetComponent(out Rigidbody rigidbody);
+            rigidbody.velocity += Vector3.down * _downForce;
+            unit.Crowd.Slow(_crowdSlowTime);
         }
     }
 

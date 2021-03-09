@@ -6,7 +6,13 @@ public class FollowCamera : MonoBehaviour
     [SerializeField] private Vector3 _unitOffset;
 
     private static Transform _target;
+    private Vector3 _startPosition;
     private static int _unitsCount;
+
+    private void Awake()
+    {
+        _startPosition = transform.localPosition;
+    }
 
     public void Update()
     {
@@ -23,13 +29,20 @@ public class FollowCamera : MonoBehaviour
         _unitsCount = count;
     }
 
+    public void Stop()
+    {
+        _followSpeed = 0f;
+    }
+
     private void Follow()
     {
         var offset = _unitOffset * _unitsCount;
-        var moveVector = offset + new Vector3(
-            0f,
-            0f,
-            _target.localPosition.z);
+        var moveVector = _startPosition 
+            + offset 
+            + new Vector3(
+                0f,
+                0f,
+                _target.localPosition.z);
 
         transform.localPosition = Vector3.Lerp(
             transform.localPosition,

@@ -1,15 +1,23 @@
-﻿using System.Collections.Generic;
+﻿using Dreamteck.Splines;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Crowd : MonoBehaviour
 {
     public bool IsMove { get; set; }
 
+    public UnityEvent OnCrowdEmpty;
+
     public List<CrowdUnit> Units = new List<CrowdUnit>();
 
     [Space]
+    [SerializeField] private SplineFollower _follower;
     [SerializeField] private Transform _crowdUnits;
     [SerializeField] private float _speed = 3f;
+    [SerializeField] private float _crowdFollowerSlowSpeed = 2f;
+    [SerializeField] private float _crowdSlowSpeed = 1f;
     [SerializeField] private float _unitsOffset = -0.1f;
 
     private Vector3 _startMovePosition;
@@ -25,7 +33,7 @@ public class Crowd : MonoBehaviour
 
     private void Start()
     {
-        FollowCamera.SetFollowTarget(Units[0].transform);
+        FollowCamera.SetFollowTarget(transform);
         FollowCamera.SetUnitsCount(Units.Count);
     }
 
@@ -48,8 +56,17 @@ public class Crowd : MonoBehaviour
     public void RemoveUnit(CrowdUnit unit)
     {
         Units.Remove(unit);
-        FollowCamera.SetFollowTarget(Units[0].transform);
+        if (_isCrowdEmpty)
+        {
+            OnCrowdEmpty?.Invoke();
+            return;
+        }
         FollowCamera.SetUnitsCount(Units.Count);
+    }
+
+    public void Slow(float time)
+    {
+        StartCoroutine(GetSlowTime(time));
     }
 
     private void SetStartUnits()
@@ -77,6 +94,9 @@ public class Crowd : MonoBehaviour
 
     private void FollowUnits()
     {
+        if (_isCrowdEmpty)
+            return;
+
         for (int i = 0; i < Units.Count; i++)
         {
             if (i == 0)
@@ -97,5 +117,16 @@ public class Crowd : MonoBehaviour
         crowdUnit.Crowd = this;
         crowdUnit.transform.parent = _crowdUnits;
         FollowCamera.SetUnitsCount(Units.Count);
+    }
+
+    private IEnumerator GetSlowTime(float time)
+    {
+        float tempFollowSpeed = _follower.followSpeed;
+        float tempSpeed = _speed;
+        _follower.followSpeed = _crowdFollowerSlowSpeed;
+        _speed = _crowdSlowSpeed;
+        yield return new WaitForSecondsRealtime(time);
+        _follower.followSpeed = tempFollowSpeed;
+        _speed = tempSpeed;
     }
 }
