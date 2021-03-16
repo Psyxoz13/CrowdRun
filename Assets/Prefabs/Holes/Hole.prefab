@@ -144,8 +144,8 @@ MonoBehaviour:
   _exitLayer:
     serializedVersion: 2
     m_Bits: 256
-  _downForce: 3.25
-  _crowdSlowTime: 0.35
+  _downForce: 12
+  _slow: 0.2
 --- !u!1 &9202544318847244841
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,4 @@
 ﻿using Dreamteck.Splines;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,15 +8,14 @@ public class Crowd : MonoBehaviour
     public bool IsMove { get; set; }
 
     public UnityEvent OnCrowdEmpty;
+    public UnityEvent OnUnitAdded;
 
     public List<CrowdUnit> Units = new List<CrowdUnit>();
 
-    [Space]
-    [SerializeField] private SplineFollower _follower;
     [SerializeField] private Transform _crowdUnits;
-    [SerializeField] private float _speed = 3f;
-    [SerializeField] private float _crowdFollowerSlowSpeed = 2f;
-    [SerializeField] private float _crowdSlowSpeed = 1f;
+    [SerializeField] private float _unitsRotateSpeed = 3f;
+    [SerializeField] private float _unitsForwardSpeed = 3f;
+    [SerializeField] private float _unitsHorizontalSpeed = 3f;
     [SerializeField] private float _unitsOffset = -0.1f;
 
     private Vector3 _startMovePosition;
@@ -56,18 +54,13 @@ public class Crowd : MonoBehaviour
     public void RemoveUnit(CrowdUnit unit)
     {
         Units.Remove(unit);
-        unit.Rigidbody.velocity = unit.Velocity * .2f;
+
         if (_isCrowdEmpty)
         {
             OnCrowdEmpty?.Invoke();
             return;
         }
         FollowCamera.SetUnitsCount(Units.Count);
-    }
-
-    public void Slow(float time)
-    {
-        StartCoroutine(GetSlowTime(time));
     }
 
     private void SetStartUnits()
@@ -102,12 +95,12 @@ public class Crowd : MonoBehaviour
         {
             if (i == 0)
             {
-                Units[i].Follow(transform, _unitsOffset, _speed);
+                Units[i].Follow(transform, _unitsOffset, _unitsHorizontalSpeed, _unitsForwardSpeed, _unitsRotateSpeed);
             }
             else
             {
-                var target = Units[i - 1].transform;
-                Units[i].Follow(target, _unitsOffset, _speed);
+                Transform target = Units[i - 1].transform;
+                Units[i].Follow(target, _unitsOffset, _unitsHorizontalSpeed, _unitsForwardSpeed, _unitsRotateSpeed);
             }
         }
     }
@@ -115,21 +108,12 @@ public class Crowd : MonoBehaviour
     private void AddUnit(CrowdUnit crowdUnit)
     {
         Units.Insert(0, crowdUnit);
+
         crowdUnit.Crowd = this;
         crowdUnit.transform.parent = _crowdUnits;
+
         FollowCamera.SetUnitsCount(Units.Count);
-    }
 
-    private IEnumerator GetSlowTime(float time)
-    {
-        float tempFollowSpeed = _follower.followSpeed;
-        float tempSpeed = _speed;
-        _follower.followSpeed = _crowdFollowerSlowSpeed;
-        _speed = _crowdSlowSpeed;
-
-        yield return new WaitForSecondsRealtime(time);
-
-        _follower.followSpeed = tempFollowSpeed;
-        _speed = tempSpeed;
+        OnUnitAdded?.Invoke();
     }
 }

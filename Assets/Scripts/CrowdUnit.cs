@@ -1,13 +1,16 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Animator))]
 public class CrowdUnit : MonoBehaviour
 {
+    public Vector3 Velocity { get; private set; }
+    public bool IsGrounded { get; private set; }
+
     [HideInInspector] public Crowd Crowd;
 
     [HideInInspector] public Rigidbody Rigidbody;
-    [HideInInspector] public Vector3 Velocity;
+
+    [SerializeField] private ParticleSystem _hitEffect;
 
     private Vector3 _prevPosition;
     private Animator _animator;
@@ -43,18 +46,26 @@ public class CrowdUnit : MonoBehaviour
     {
         if (Physics.Raycast(transform.position, Vector3.down, 0.4f))
         {
-            _animator.SetBool("IsGrounded", true);
+            IsGrounded = true;
         }
         else
         {
-            _animator.SetBool("IsGrounded", false);
+            IsGrounded = false;
         }
+        _animator.SetBool("IsGrounded", IsGrounded);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Obstacle"))
+        if (collision.gameObject.CompareTag("CrowdUnit"))
         {
+            _hitEffect.Play(true);
+        }
+
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            _hitEffect.Play(true);
+
             SetCrashed();
             RemoveUnit(collision.transform.parent);
         }
@@ -68,19 +79,22 @@ public class CrowdUnit : MonoBehaviour
         }
     }
 
-    public void Follow(Transform target, float offsetZ, float speed)
+    public void Follow(Transform target, float offsetZ, float speed, float forwardSpeed, float rotateSpeed)
     {
         var lookDirection = (target.localPosition - transform.localPosition).normalized;
 
         transform.localRotation = Quaternion.Lerp(
             transform.localRotation,
             Quaternion.LookRotation(lookDirection),
-            speed * Time.deltaTime);
+            rotateSpeed * Time.deltaTime);
 
         var moveVector = new Vector3(
             target.localPosition.x,
              transform.localPosition.y,
-             offsetZ + target.localPosition.z);
+             Mathf.MoveTowards(
+                  transform.localPosition.z,
+                 offsetZ + target.localPosition.z,
+                 forwardSpeed));
 
         transform.localPosition = Vector3.Lerp(
             transform.localPosition,
@@ -95,7 +109,6 @@ public class CrowdUnit : MonoBehaviour
 
     private void SetCrashed()
     {
-        transform.forward *= -1;
         _animator.SetTrigger("SetCrash");
     }
 
