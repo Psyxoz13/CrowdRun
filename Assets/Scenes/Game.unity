@@ -99,7 +99,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -556,6 +556,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1223579532}
     m_Modifications:
+    - target: {fileID: 3335940570788283391, guid: 3565be6b0479e144ca4413e6f49ef363,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335940570925322749, guid: 3565be6b0479e144ca4413e6f49ef363,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335940571057174191, guid: 3565be6b0479e144ca4413e6f49ef363,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadScene
+      objectReference: {fileID: 0}
+    - target: {fileID: 3335940571678147937, guid: 3565be6b0479e144ca4413e6f49ef363,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1223579531}
+    - target: {fileID: 3335940571678147937, guid: 3565be6b0479e144ca4413e6f49ef363,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: NextLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 9205558748286823600, guid: 3565be6b0479e144ca4413e6f49ef363,
         type: 3}
       propertyPath: m_Mesh
