@@ -5,6 +5,8 @@ public class CrowdUnit : MonoBehaviour
 {
     public Vector3 Velocity { get; private set; }
     public bool IsGrounded { get; private set; }
+    public bool IsDead { get; private set; }
+    public bool IsRush { get; set; }
 
     [HideInInspector] public Crowd Crowd;
 
@@ -61,13 +63,12 @@ public class CrowdUnit : MonoBehaviour
         {
             _hitEffect.Play(true);
         }
-
-        if (collision.gameObject.CompareTag("Obstacle"))
+        else if (collision.gameObject.CompareTag("Obstacle"))
         {
             _hitEffect.Play(true);
 
             SetCrashed();
-            RemoveUnit(collision.transform.parent);
+            RemoveUnit();
         }
     }
 
@@ -75,7 +76,7 @@ public class CrowdUnit : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            RemoveUnit(other.transform.parent);
+            RemoveUnit();
         }
     }
 
@@ -112,9 +113,10 @@ public class CrowdUnit : MonoBehaviour
         _animator.SetTrigger("SetCrash");
     }
 
-    private void RemoveUnit(Transform newParent)
+    private void RemoveUnit()
     {
         Crowd.RemoveUnit(this);
-        transform.parent = newParent;
+        transform.parent = null;
+        IsDead = true;
     }
 }

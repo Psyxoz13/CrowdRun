@@ -3,8 +3,7 @@
 [RequireComponent(typeof(Collider))]
 public class JellyCube : MonoBehaviour
 {
-    [SerializeField] private GameObject _jumpZone;
-    [SerializeField] private ParticleSystem _hitEffect;
+    private JellyCubesRow _parentRow;
 
     private Collider _collider;
     private Animator _animator;
@@ -13,17 +12,29 @@ public class JellyCube : MonoBehaviour
     {
         _collider = GetComponent<Collider>();
         _animator = GetComponent<Animator>();
+
+        if (transform.parent.TryGetComponent(out JellyCubesRow cubesRow))
+        {
+            _parentRow = cubesRow;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("CrowdUnit"))
         {
-            _collider.enabled = false;
-            _animator.SetTrigger("SetBoom");
-            _jumpZone.SetActive(true);
+            SetExplosion();
 
-            //_hitEffect.Play(true);
+            if (_parentRow)
+            {
+                _parentRow.Explore();
+            }
         }
+    }
+
+    public void SetExplosion()
+    {
+        _collider.enabled = false;
+        _animator.SetTrigger("SetBoom");
     }
 }

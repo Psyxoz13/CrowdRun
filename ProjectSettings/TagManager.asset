@@ -6,6 +6,7 @@ TagManager:
   tags:
   - CrowdUnit
   - Obstacle
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Ground
   - Jelly
   - Platform
-  - 
+  - Obstacle
   - 
   - 
   - 

@@ -124,7 +124,7 @@ Transform:
   - {fileID: 321846501910588601}
   - {fileID: 321846501850206468}
   m_Father: {fileID: 321846502028914999}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!198 &321846501309571379
 ParticleSystem:
@@ -14498,7 +14498,7 @@ GameObject:
   - component: {fileID: 321846502028914996}
   - component: {fileID: 321846502028914997}
   - component: {fileID: 321846502028914998}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: JellyCube
   m_TagString: Obstacle
   m_Icon: {fileID: 0}
@@ -14518,7 +14518,6 @@ Transform:
   m_Children:
   - {fileID: 321846501478513683}
   - {fileID: 321846501178663408}
-  - {fileID: 321846502121588980}
   - {fileID: 321846501309571405}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -14548,8 +14547,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06546458e261f9f469041f6267baef59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpZone: {fileID: 321846502121588981}
-  _hitEffect: {fileID: 321846501309571379}
+  _jumpZone: {fileID: 0}
 --- !u!95 &321846502028914998
 Animator:
   serializedVersion: 3
@@ -14569,68 +14567,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!1 &321846502121588981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 321846502121588980}
-  - component: {fileID: 321846502121588986}
-  - component: {fileID: 321846502121588987}
-  m_Layer: 0
-  m_Name: JumpZone
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &321846502121588980
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321846502121588981}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5, z: -3.76}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 321846502028914999}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &321846502121588986
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321846502121588981}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &321846502121588987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 321846502121588981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a8ed91907e252e4485110d675887017, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _enterLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  _jumpPower: 5
-  _once: 0
 --- !u!1 &321846502226103943
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,6 +18,11 @@ public class Crowd : MonoBehaviour
     [SerializeField] private float _unitsHorizontalSpeed = 3f;
     [SerializeField] private float _unitsOffset = -0.1f;
 
+    [Header("Rush")]
+    [SerializeField] private LayerMask _rushMask;
+    [SerializeField] private float _distanceToRush = 5f;
+    [SerializeField] private float _rushSpeed = 5f;
+
     private Vector3 _startMovePosition;
     private bool _isCrowdEmpty 
     {
@@ -41,11 +46,17 @@ public class Crowd : MonoBehaviour
         FollowUnits();
     }
 
+    private void FixedUpdate()
+    {
+        TrySetRush(Units[0]);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CrowdUnit") &&
             other.TryGetComponent(out CrowdUnit crowdUnit) &&
-            Units.Contains(crowdUnit) == false)
+            Units.Contains(crowdUnit) == false &&
+            crowdUnit.IsDead == false)
         {
             AddUnit(crowdUnit);
         }
@@ -95,13 +106,36 @@ public class Crowd : MonoBehaviour
         {
             if (i == 0)
             {
-                Units[i].Follow(transform, _unitsOffset, _unitsHorizontalSpeed, _unitsForwardSpeed, _unitsRotateSpeed);
+                FollowFirstUnit();
             }
             else
             {
                 Transform target = Units[i - 1].transform;
                 Units[i].Follow(target, _unitsOffset, _unitsHorizontalSpeed, _unitsForwardSpeed, _unitsRotateSpeed);
             }
+        }
+    }
+
+    private void FollowFirstUnit()
+    {
+        CrowdUnit crowdUnit = Units[0];
+        if (crowdUnit.IsRush)
+        {
+            crowdUnit.Follow(
+                transform,
+                _unitsOffset + _distanceToRush,
+                _unitsHorizontalSpeed,
+                _rushSpeed,
+                _unitsRotateSpeed);
+        }
+        else
+        {
+            crowdUnit.Follow(
+                transform,
+                _unitsOffset,
+                _unitsHorizontalSpeed,
+                _unitsForwardSpeed,
+                _unitsRotateSpeed);
         }
     }
 
@@ -115,5 +149,18 @@ public class Crowd : MonoBehaviour
         FollowCamera.SetUnitsCount(Units.Count);
 
         OnUnitAdded?.Invoke();
+    }
+
+    private void TrySetRush(CrowdUnit unit)
+    {
+        if (_isCrowdEmpty == false &&
+            Physics.Raycast(Units[0].transform.position + Vector3.up * 0.5f, Vector3.forward, _distanceToRush, _rushMask))
+        {
+            unit.IsRush = true;
+        }
+        else
+        {
+            unit.IsRush = false;
+        }
     }
 }
