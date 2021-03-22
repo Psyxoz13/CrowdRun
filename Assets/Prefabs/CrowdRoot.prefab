@@ -924,6 +924,7 @@ MonoBehaviour:
   _unitsForwardSpeed: 1
   _unitsHorizontalSpeed: 3
   _unitsOffset: -1.5
+  _horizontalMoveRange: 4
   _rushMask:
     serializedVersion: 2
     m_Bits: 8192

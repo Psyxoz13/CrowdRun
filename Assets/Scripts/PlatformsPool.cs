@@ -15,7 +15,9 @@ public class PlatformsPool : MonoBehaviour
         Vector3 unitPosition = other.transform.position;
 
         PlacePlatform(unitPosition);
-        PlayEffect(unitPosition);
+
+        if (_effect)
+            PlayEffect(unitPosition);
     }
 
     private void PlacePlatform(Vector3 targetPosition)

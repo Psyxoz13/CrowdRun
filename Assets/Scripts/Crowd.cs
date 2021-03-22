@@ -51,6 +51,9 @@ public class Crowd : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (_isCrowdEmpty)
+            return;
+
         TrySetRush(Units[0]);
     }
 
@@ -164,8 +167,7 @@ public class Crowd : MonoBehaviour
 
     private void TrySetRush(CrowdUnit unit)
     {
-        if (_isCrowdEmpty == false &&
-            Physics.Raycast(Units[0].transform.position + Vector3.up * 0.5f, Vector3.forward, _distanceToRush, _rushMask))
+        if (Physics.Raycast(Units[0].transform.position + Vector3.up * 0.5f, Vector3.forward, _distanceToRush, _rushMask))
         {
             unit.IsRush = true;
         }

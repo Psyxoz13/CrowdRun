@@ -28,7 +28,10 @@ public class JellyCubesRow : MonoBehaviour
     {
         for (int i = 0; i < Cubes.Count; i++)
         {
-            Cubes[i].SetExplosion();
+            var cube = Cubes[i];
+
+            if (cube.gameObject.activeSelf)
+                cube.SetExplosion();
         }
     }
 }
