@@ -18,6 +18,9 @@ public class Crowd : MonoBehaviour
     [SerializeField] private float _unitsHorizontalSpeed = 3f;
     [SerializeField] private float _unitsOffset = -0.1f;
 
+    [Space]
+    [SerializeField] private float _horizontalMoveRange = 2f;
+
     [Header("Rush")]
     [SerializeField] private LayerMask _rushMask;
     [SerializeField] private float _distanceToRush = 5f;
@@ -87,7 +90,7 @@ public class Crowd : MonoBehaviour
         if (IsMove)
         {
             transform.localPosition = new Vector3(
-                Control.Delta.x + _startMovePosition.x,
+                GetHorizontalMovement(),
                 transform.localPosition.y,
                 transform.localPosition.z);
         }
@@ -95,6 +98,14 @@ public class Crowd : MonoBehaviour
         {
             _startMovePosition = transform.localPosition;
         }
+    }
+
+    private float GetHorizontalMovement()
+    {
+        return Mathf.Clamp(
+            Control.Delta.x + _startMovePosition.x,
+            -_horizontalMoveRange,
+            _horizontalMoveRange);
     }
 
     private void FollowUnits()
@@ -122,8 +133,8 @@ public class Crowd : MonoBehaviour
         if (crowdUnit.IsRush)
         {
             crowdUnit.Follow(
-                transform,
-                _unitsOffset + _distanceToRush,
+                transform.localPosition + Vector3.forward * _distanceToRush,
+                _unitsOffset,
                 _unitsHorizontalSpeed,
                 _rushSpeed,
                 _unitsRotateSpeed);

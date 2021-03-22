@@ -82,7 +82,12 @@ public class CrowdUnit : MonoBehaviour
 
     public void Follow(Transform target, float offsetZ, float speed, float forwardSpeed, float rotateSpeed)
     {
-        var lookDirection = (target.localPosition - transform.localPosition).normalized;
+        Follow(target.localPosition, offsetZ, speed, forwardSpeed, rotateSpeed);
+    }
+
+    public void Follow(Vector3 targetPosition, float offsetZ, float speed, float forwardSpeed, float rotateSpeed)
+    {
+        var lookDirection = (targetPosition - transform.localPosition).normalized;
 
         transform.localRotation = Quaternion.Lerp(
             transform.localRotation,
@@ -90,11 +95,11 @@ public class CrowdUnit : MonoBehaviour
             rotateSpeed * Time.deltaTime);
 
         var moveVector = new Vector3(
-            target.localPosition.x,
+            targetPosition.x,
              transform.localPosition.y,
              Mathf.MoveTowards(
                   transform.localPosition.z,
-                 offsetZ + target.localPosition.z,
+                 offsetZ + targetPosition.z,
                  forwardSpeed));
 
         transform.localPosition = Vector3.Lerp(
