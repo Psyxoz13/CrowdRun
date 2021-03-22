@@ -89,10 +89,13 @@ public class CrowdUnit : MonoBehaviour
     {
         var lookDirection = (targetPosition - transform.localPosition).normalized;
 
-        transform.localRotation = Quaternion.Lerp(
-            transform.localRotation,
-            Quaternion.LookRotation(lookDirection),
-            rotateSpeed * Time.deltaTime);
+        if (transform.localPosition.z < targetPosition.z)
+        {
+            transform.localRotation = Quaternion.Lerp(
+                transform.localRotation,
+                Quaternion.LookRotation(lookDirection),
+                rotateSpeed * Time.deltaTime);
+        }
 
         var moveVector = new Vector3(
             targetPosition.x,

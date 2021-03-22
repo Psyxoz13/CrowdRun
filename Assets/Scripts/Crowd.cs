@@ -39,7 +39,7 @@ public class Crowd : MonoBehaviour
 
     private void Start()
     {
-        FollowCamera.SetFollowTarget(transform);
+        FollowCamera.SetFollowTarget(Units[0].transform);
         FollowCamera.SetUnitsCount(Units.Count);
     }
 
@@ -78,6 +78,7 @@ public class Crowd : MonoBehaviour
             return;
         }
         FollowCamera.SetUnitsCount(Units.Count);
+        FollowCamera.SetFollowTarget(Units[0].transform);
     }
 
     private void SetStartUnits()
@@ -161,6 +162,7 @@ public class Crowd : MonoBehaviour
         crowdUnit.transform.parent = _crowdUnits;
 
         FollowCamera.SetUnitsCount(Units.Count);
+        FollowCamera.SetFollowTarget(Units[0].transform);
 
         OnUnitAdded?.Invoke();
     }

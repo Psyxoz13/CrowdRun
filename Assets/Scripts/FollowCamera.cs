@@ -2,17 +2,12 @@
 
 public class FollowCamera : MonoBehaviour
 {
+    [SerializeField] private Vector3 _startOffset;
     [SerializeField] private float _followSpeed = 5f;
     [SerializeField] private Vector3 _unitOffset;
 
     private static Transform _target;
-    private Vector3 _startPosition;
     private static int _unitsCount;
-
-    private void Awake()
-    {
-        _startPosition = transform.localPosition;
-    }
 
     public void Update()
     {
@@ -37,7 +32,7 @@ public class FollowCamera : MonoBehaviour
     private void Follow()
     {
         var offset = _unitOffset * _unitsCount;
-        var moveVector = _startPosition 
+        var moveVector = _startOffset
             + offset 
             + new Vector3(
                 0f,
