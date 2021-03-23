@@ -12,7 +12,7 @@ public class LevelManagement : MonoBehaviour
 
         var level = Levels[levelIndex];
 
-        if (level.LevelPrefab)
+        if (level.LevelObject)
         {
             SelLevelParams(level);
 
@@ -53,10 +53,10 @@ public class LevelManagement : MonoBehaviour
 
     private void SelLevelParams(Level level)
     {
-        if (level.LevelPrefab)
+        if (level.LevelObject)
         {
-            ClearChilds();
-            Instantiate(level.LevelPrefab, transform);
+            DeactivateLevels();
+            level.LevelObject.SetActive(true);
         }
 
         if (level.SkyboxMaterial)
@@ -65,20 +65,11 @@ public class LevelManagement : MonoBehaviour
         }
     }
 
-    private void ClearChilds()
+    private void DeactivateLevels()
     {
-        for (int i = 0; i < transform.childCount; i++)
+        for (int i = 0; i < Levels.Count; i++)
         {
-            GameObject destroyObject = transform.GetChild(i).gameObject;
-
-            if (Application.isEditor)
-            {
-                DestroyImmediate(destroyObject);
-            }
-            else
-            {
-                Destroy(destroyObject);
-            }
+            Levels[i].LevelObject.SetActive(false);     
         }
     }
 }
@@ -86,6 +77,6 @@ public class LevelManagement : MonoBehaviour
 [System.Serializable]
 public class Level
 {
-    public GameObject LevelPrefab;
+    public GameObject LevelObject;
     public Material SkyboxMaterial; 
 }

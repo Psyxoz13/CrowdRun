@@ -1048,7 +1048,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Crowd: {fileID: 0}
   Rigidbody: {fileID: 0}
-  Velocity: {x: 0, y: 0, z: 0}
   _hitEffect: {fileID: 3122883316801883160}
 --- !u!136 &3841651644427890258
 CapsuleCollider:
@@ -1604,7 +1603,7 @@ SkinnedMeshRenderer:
   m_GameObject: {fileID: 6105203678377100886}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_DynamicOccludee: 1
   m_MotionVectors: 1
   m_LightProbeUsage: 1

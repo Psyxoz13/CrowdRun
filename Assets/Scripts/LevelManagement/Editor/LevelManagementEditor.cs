@@ -78,9 +78,9 @@ public class LevelManagementEditor : Editor
 
                 EditorGUILayout.BeginVertical("box");
 
-                level.LevelPrefab = (GameObject)EditorGUILayout.ObjectField(
+                level.LevelObject = (GameObject)EditorGUILayout.ObjectField(
                     new GUIContent("Level Prefab"),
-                    _levelManagement.Levels[i].LevelPrefab,
+                    _levelManagement.Levels[i].LevelObject,
                     typeof(GameObject));
 
                 level.SkyboxMaterial = (Material)EditorGUILayout.ObjectField(

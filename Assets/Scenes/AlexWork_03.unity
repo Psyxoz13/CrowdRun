@@ -99,7 +99,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -2189,8 +2189,8 @@ RectTransform:
   - {fileID: 1587891276}
   - {fileID: 11692491}
   - {fileID: 1260902332}
-  m_Father: {fileID: 264787236}
-  m_RootOrder: 3
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -2775,7 +2775,7 @@ Transform:
   - {fileID: 175334901}
   - {fileID: 2001796727}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &147300830
 GameObject:
@@ -4369,7 +4369,6 @@ Transform:
   - {fileID: 2135018431}
   - {fileID: 959312474}
   - {fileID: 1493422027}
-  - {fileID: 108624844}
   - {fileID: 1159553517}
   - {fileID: 1851925265}
   - {fileID: 397036845}
@@ -7049,7 +7048,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 264787236}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &398142043
 GameObject:
@@ -28635,7 +28634,7 @@ Transform:
   m_LocalScale: {x: 9.6, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &585512740
 GameObject:
@@ -41847,7 +41846,7 @@ Transform:
   m_Children:
   - {fileID: 1123203146}
   m_Father: {fileID: 264787236}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &849870132
 GameObject:
@@ -51789,7 +51788,7 @@ Transform:
   - {fileID: 1356612365}
   - {fileID: 849870137}
   m_Father: {fileID: 264787236}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: -71.7, z: 0}
 --- !u!1 &1162778431
 GameObject:
@@ -52663,7 +52662,7 @@ Transform:
   m_Children:
   - {fileID: 264787236}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225465689
 GameObject:
@@ -58194,7 +58193,7 @@ Transform:
   - {fileID: 95532074}
   - {fileID: 310785392}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1259360014
 GameObject:
@@ -58458,7 +58457,7 @@ Transform:
   - {fileID: 351282411}
   - {fileID: 1077119809}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1280057976
 GameObject:
@@ -59626,12 +59625,23 @@ MonoBehaviour:
   OnUnitAdded:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1587891271}
         m_MethodName: Show
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -62453,7 +62463,7 @@ Transform:
   - {fileID: 1197188193}
   - {fileID: 2122371352}
   m_Father: {fileID: 264787236}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1540825316
 GameObject:
@@ -80672,7 +80682,7 @@ Transform:
   m_Children:
   - {fileID: 656449067}
   m_Father: {fileID: 264787236}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!64 &1851925266
 MeshCollider:
