@@ -99,7 +99,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -14959,61 +14959,61 @@ MonoBehaviour:
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0
-    - position: {x: 0, y: 0, z: 27.777779}
+    - position: {x: 0, y: 0, z: 22.222223}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.1111111111111111
-    - position: {x: 0, y: 0, z: 55.555557}
+    - position: {x: 0, y: 0, z: 44.444447}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.2222222222222222
-    - position: {x: 0, y: 0, z: 83.333336}
+    - position: {x: 0, y: 0, z: 66.66667}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.3333333333333333
+    - position: {x: 0, y: 0, z: 88.88889}
+      up: {x: 0, y: 1, z: 0}
+      forward: {x: 0, y: 0, z: 1}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      size: 0.6
+      percent: 0.4444444444444444
     - position: {x: 0, y: 0, z: 111.111115}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
-      percent: 0.4444444444444444
-    - position: {x: 0, y: 0, z: 138.8889}
-      up: {x: 0, y: 1, z: 0}
-      forward: {x: 0, y: 0, z: 1}
-      color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.5555555555555556
-    - position: {x: 0, y: 0, z: 166.66667}
+    - position: {x: 0, y: 0, z: 133.33334}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.6666666666666666
-    - position: {x: 0, y: 0, z: 194.44444}
+    - position: {x: 0, y: 0, z: 155.55556}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.7777777777777778
-    - position: {x: 0, y: 0, z: 222.22223}
+    - position: {x: 0, y: 0, z: 177.77779}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.8888888888888888
-    - position: {x: 0, y: 0, z: 250}
+    - position: {x: 0, y: 0, z: 200}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 1
     optimizedIndices: 
     sampleMode: 0
@@ -15394,122 +15394,122 @@ MonoBehaviour:
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0
-  - position: {x: 0, y: 0, z: 27.777779}
+  - position: {x: 0, y: 0, z: 22.222223}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.1111111111111111
-  - position: {x: 0, y: 0, z: 55.555557}
+  - position: {x: 0, y: 0, z: 44.444447}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.2222222222222222
-  - position: {x: 0, y: 0, z: 83.333336}
+  - position: {x: 0, y: 0, z: 66.66667}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.3333333333333333
+  - position: {x: 0, y: 0, z: 88.88889}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0, y: 0, z: 1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 0.6
+    percent: 0.4444444444444444
   - position: {x: 0, y: 0, z: 111.111115}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
-    percent: 0.4444444444444444
-  - position: {x: 0, y: 0, z: 138.8889}
-    up: {x: 0, y: 1, z: 0}
-    forward: {x: 0, y: 0, z: 1}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.5555555555555556
-  - position: {x: 0, y: 0, z: 166.66667}
+  - position: {x: 0, y: 0, z: 133.33334}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.6666666666666666
-  - position: {x: 0, y: 0, z: 194.44444}
+  - position: {x: 0, y: 0, z: 155.55556}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.7777777777777778
-  - position: {x: 0, y: 0, z: 222.22223}
+  - position: {x: 0, y: 0, z: 177.77779}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.8888888888888888
-  - position: {x: 0, y: 0, z: 250}
+  - position: {x: 0, y: 0, z: 200}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 1
   _transformedSamples:
   - position: {x: 0, y: 0, z: 0}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0
-  - position: {x: 0, y: 0, z: 27.777779}
+  - position: {x: 0, y: 0, z: 22.222223}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.1111111111111111
-  - position: {x: 0, y: 0, z: 55.555557}
+  - position: {x: 0, y: 0, z: 44.444447}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.2222222222222222
-  - position: {x: 0, y: 0, z: 83.333336}
+  - position: {x: 0, y: 0, z: 66.66667}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.3333333333333333
+  - position: {x: 0, y: 0, z: 88.88889}
+    up: {x: 0, y: 1, z: 0}
+    forward: {x: 0, y: 0, z: 1}
+    color: {r: 1, g: 1, b: 1, a: 1}
+    size: 0.6
+    percent: 0.4444444444444444
   - position: {x: 0, y: 0, z: 111.111115}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
-    percent: 0.4444444444444444
-  - position: {x: 0, y: 0, z: 138.8889}
-    up: {x: 0, y: 1, z: 0}
-    forward: {x: 0, y: 0, z: 1}
-    color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.5555555555555556
-  - position: {x: 0, y: 0, z: 166.66667}
+  - position: {x: 0, y: 0, z: 133.33334}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.6666666666666666
-  - position: {x: 0, y: 0, z: 194.44444}
+  - position: {x: 0, y: 0, z: 155.55556}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.7777777777777778
-  - position: {x: 0, y: 0, z: 222.22223}
+  - position: {x: 0, y: 0, z: 177.77779}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 0.8888888888888888
-  - position: {x: 0, y: 0, z: 250}
+  - position: {x: 0, y: 0, z: 200}
     up: {x: 0, y: 1, z: 0}
     forward: {x: 0, y: 0, z: 1}
     color: {r: 1, g: 1, b: 1, a: 1}
-    size: 0.8
+    size: 0.6
     percent: 1
   sampleCollection:
     samples:
@@ -15517,61 +15517,61 @@ MonoBehaviour:
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0
-    - position: {x: 0, y: 0, z: 27.777779}
+    - position: {x: 0, y: 0, z: 22.222223}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.1111111111111111
-    - position: {x: 0, y: 0, z: 55.555557}
+    - position: {x: 0, y: 0, z: 44.444447}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.2222222222222222
-    - position: {x: 0, y: 0, z: 83.333336}
+    - position: {x: 0, y: 0, z: 66.66667}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.3333333333333333
+    - position: {x: 0, y: 0, z: 88.88889}
+      up: {x: 0, y: 1, z: 0}
+      forward: {x: 0, y: 0, z: 1}
+      color: {r: 1, g: 1, b: 1, a: 1}
+      size: 0.6
+      percent: 0.4444444444444444
     - position: {x: 0, y: 0, z: 111.111115}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
-      percent: 0.4444444444444444
-    - position: {x: 0, y: 0, z: 138.8889}
-      up: {x: 0, y: 1, z: 0}
-      forward: {x: 0, y: 0, z: 1}
-      color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.5555555555555556
-    - position: {x: 0, y: 0, z: 166.66667}
+    - position: {x: 0, y: 0, z: 133.33334}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.6666666666666666
-    - position: {x: 0, y: 0, z: 194.44444}
+    - position: {x: 0, y: 0, z: 155.55556}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.7777777777777778
-    - position: {x: 0, y: 0, z: 222.22223}
+    - position: {x: 0, y: 0, z: 177.77779}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 0.8888888888888888
-    - position: {x: 0, y: 0, z: 250}
+    - position: {x: 0, y: 0, z: 200}
       up: {x: 0, y: 1, z: 0}
       forward: {x: 0, y: 0, z: 1}
       color: {r: 1, g: 1, b: 1, a: 1}
-      size: 0.8
+      size: 0.6
       percent: 1
     optimizedIndices: 
     sampleMode: 0
@@ -15802,7 +15802,7 @@ PrefabInstance:
     - target: {fileID: 625719386698232071, guid: 836f6b4ceee90f04295845590b2591e6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 50
+      value: 50.000004
       objectReference: {fileID: 0}
     - target: {fileID: 625719386698232071, guid: 836f6b4ceee90f04295845590b2591e6,
         type: 3}

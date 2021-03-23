@@ -1227,6 +1227,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cb51b30dde322c4fa4d15fe1f21950b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _startOffset: {x: 0, y: 12, z: -12}
   _followSpeed: 2.25
   _unitOffset: {x: 0, y: 0.25, z: -1}
 --- !u!1 &8358098138147698625

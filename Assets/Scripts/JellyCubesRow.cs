@@ -31,7 +31,7 @@ public class JellyCubesRow : MonoBehaviour
             var cube = Cubes[i];
 
             if (cube.gameObject.activeSelf)
-                cube.SetExplosion();
+                cube.SetNotExplosion();
         }
     }
 }

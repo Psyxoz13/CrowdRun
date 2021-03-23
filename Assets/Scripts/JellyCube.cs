@@ -7,6 +7,7 @@ public class JellyCube : MonoBehaviour
 
     private Collider _collider;
     private Animator _animator;
+    private bool _exploding = true;
 
     private void Awake()
     {
@@ -21,7 +22,8 @@ public class JellyCube : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("CrowdUnit"))
+        if (collision.gameObject.CompareTag("CrowdUnit") &&
+            _exploding)
         {
             SetExplosion();
 
@@ -36,5 +38,11 @@ public class JellyCube : MonoBehaviour
     {
         _collider.enabled = false;
         _animator.SetTrigger("SetBoom");
+    }
+
+    public void SetNotExplosion()
+    {
+        _exploding = false;
+        gameObject.tag = "Untagged";
     }
 }
