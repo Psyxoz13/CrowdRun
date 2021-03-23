@@ -12,10 +12,6 @@ public class LevelScoreView : MonoBehaviour
         LevelScore.OnAddScore += UpdateText;
     }
 
-    private void Start()
-    {
-    }
-
     private void UpdateText(int score)
     {
         _textField.text = score.ToString();
