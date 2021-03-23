@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 5390ccc6cbba36142a51bb2d8a8b582d, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: b94a90c9516c9cc42bf2d46a3d63a76a, type: 2}
   m_HaloStrength: 0.517
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3.57
@@ -623,7 +623,7 @@ PrefabInstance:
     - target: {fileID: 1960952012708715382, guid: a71d75178a68f674187e01888b273979,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7551233164814048099, guid: a71d75178a68f674187e01888b273979,
         type: 3}
@@ -996,7 +996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04c48f605a488b1428598dc51a8a399e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CurrentLevelIndex: 1
+  CurrentLevelIndex: 0
   Levels:
   - LevelObject: {fileID: 1529830457}
     SkyboxMaterial: {fileID: 2100000, guid: b94a90c9516c9cc42bf2d46a3d63a76a, type: 2}
@@ -1028,6 +1028,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1223579532}
     m_Modifications:
+    - target: {fileID: 6490396896971121168, guid: 6deec52e393ae1a4196e26a95c2eed67,
+        type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6490396896971121168, guid: 6deec52e393ae1a4196e26a95c2eed67,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7884242478933772496, guid: 6deec52e393ae1a4196e26a95c2eed67,
         type: 3}
       propertyPath: m_Name
@@ -1036,7 +1046,7 @@ PrefabInstance:
     - target: {fileID: 7884242478933772496, guid: 6deec52e393ae1a4196e26a95c2eed67,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7884242478933772503, guid: 6deec52e393ae1a4196e26a95c2eed67,
         type: 3}

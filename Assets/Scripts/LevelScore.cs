@@ -8,6 +8,8 @@ public class LevelScore : MonoBehaviour
     public delegate void LevelScoreEvent(int score);
     public static event LevelScoreEvent OnAddScore;
 
+    public static float Multiplier { get; set; }
+
     [Header("Settings")]
     [SerializeField] private int AddScoreCount = 1;
 
