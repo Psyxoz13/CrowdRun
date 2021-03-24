@@ -8291,6 +8291,11 @@ PrefabInstance:
       objectReference: {fileID: 1159140687172554300}
     - target: {fileID: 8358098139250789358, guid: 176e1d61c6a77b043a1b14ac097d8311,
         type: 3}
+      propertyPath: _followSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8358098139250789358, guid: 176e1d61c6a77b043a1b14ac097d8311,
+        type: 3}
       propertyPath: _result.size
       value: 0.8
       objectReference: {fileID: 0}

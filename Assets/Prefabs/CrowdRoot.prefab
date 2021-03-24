@@ -871,7 +871,7 @@ MonoBehaviour:
   OnCrowdEmpty:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 8358098138138807319}
         m_MethodName: SetTrigger
         m_Mode: 5
         m_Arguments:
@@ -882,7 +882,7 @@ MonoBehaviour:
           m_StringArgument: SetLose
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 8358098138138807319}
+      - m_Target: {fileID: 8358098139250789358}
         m_MethodName: Stop
         m_Mode: 1
         m_Arguments:
@@ -932,10 +932,11 @@ MonoBehaviour:
   Units:
   - {fileID: 8358098138439008103}
   SplineFollower: {fileID: 8358098139250789358}
+  Control: {fileID: 8358098139250789357}
   _crowdUnits: {fileID: 8358098138335793475}
-  _unitsRotateSpeed: 5
-  _unitsForwardSpeed: 1
-  _unitsHorizontalSpeed: 3
+  _unitsRotateSpeed: 10
+  _unitsForwardSpeed: 5
+  _unitsHorizontalSpeed: 5
   _unitsOffset: -1.5
   _horizontalMoveRange: 4
   _rushMask:

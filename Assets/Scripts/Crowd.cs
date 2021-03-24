@@ -7,7 +7,6 @@ public class Crowd : MonoBehaviour
 {
     public bool IsMove { get; set; }
 
-    public UnityEvent OnCrowdEmpty;
     public UnityEvent OnUnitAdded;
 
     public List<CrowdUnit> Units = new List<CrowdUnit>();
@@ -16,7 +15,7 @@ public class Crowd : MonoBehaviour
     public SplineFollower SplineFollower;
     public Control Control;
 
-    [Space]
+    [Header("Movement")]
     [SerializeField] private Transform _crowdUnits;
     [SerializeField] private float _unitsRotateSpeed = 3f;
     [SerializeField] private float _unitsForwardSpeed = 3f;
@@ -73,17 +72,28 @@ public class Crowd : MonoBehaviour
         }
     }
 
-    public void RemoveUnit(CrowdUnit unit)
+    public void RemoveUnit(CrowdUnit unit, bool isFinished = false)
     {
         Units.Remove(unit);
 
-        if (_isCrowdEmpty)
+        if (_isCrowdEmpty && isFinished == false)
         {
-            OnCrowdEmpty?.Invoke();
+            MenuState.SetState("SetLose");
+            SplineFollower.enabled = false;
+            Control.enabled = false;
             return;
         }
-        FollowCamera.SetUnitsCount(Units.Count);
-        FollowCamera.SetFollowTarget(Units[0].transform);
+        
+        if (isFinished)
+        {
+            FollowCamera.SetUnitsCount(0);
+            FollowCamera.SetFollowTarget(transform);
+        }
+        else
+        {
+            FollowCamera.SetUnitsCount(Units.Count);
+            FollowCamera.SetFollowTarget(Units[0].transform);
+        }
     }
 
     private void SetStartUnits()

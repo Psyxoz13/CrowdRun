@@ -6,7 +6,6 @@ public class FinishTrigger : MonoBehaviour
 {
     public UnityEvent OnFinished;
 
-
     private Collider _trigger;
 
     private void Awake()
@@ -21,7 +20,9 @@ public class FinishTrigger : MonoBehaviour
             crowdUnit.Crowd.SplineFollower.enabled = false;
             crowdUnit.Crowd.Control.enabled = false;
 
+            crowdUnit.Crowd.RemoveUnit(crowdUnit, true);
             crowdUnit.SetDancing();
+            crowdUnit.Rotate(180);
 
             MenuState.SetState("SetWin");
 
