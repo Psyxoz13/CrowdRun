@@ -27,6 +27,7 @@ public class BonusLine : MonoBehaviour
             if (crowdUnit.Crowd.Units.Count == 1 &&
                 _isStoping)
             {
+                crowdUnit.Crowd.RemoveUnit(crowdUnit, true);
                 crowdUnit.Crowd.SplineFollower.enabled = false;
                 crowdUnit.SetDancing();
                 crowdUnit.Rotate(180f);

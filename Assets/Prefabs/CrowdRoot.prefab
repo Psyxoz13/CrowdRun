@@ -868,42 +868,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b079a6630ae8a849b198be757329936, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnCrowdEmpty:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8358098138138807319}
-        m_MethodName: SetTrigger
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: SetLose
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8358098139250789358}
-        m_MethodName: Stop
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8358098139250789358}
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   OnUnitAdded:
     m_PersistentCalls:
       m_Calls:
@@ -1256,7 +1220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startOffset: {x: 0, y: 9, z: -13}
-  _followSpeed: 2.25
+  _followSpeed: 2
   _unitOffset: {x: 0, y: 0.25, z: -1.1}
 --- !u!1 &8358098138147698625
 GameObject:
