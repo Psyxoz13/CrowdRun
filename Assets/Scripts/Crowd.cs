@@ -38,6 +38,8 @@ public class Crowd : MonoBehaviour
 
     private void Awake()
     {
+        Observer.Instance.OnStartGame += StartMove;
+
         SetStartUnits();
     }
 
@@ -94,6 +96,12 @@ public class Crowd : MonoBehaviour
             FollowCamera.SetUnitsCount(Units.Count);
             FollowCamera.SetFollowTarget(Units[0].transform);
         }
+    }
+
+    private void StartMove()
+    {
+        SplineFollower.enabled = true;
+        Control.enabled = true;
     }
 
     private void SetStartUnits()

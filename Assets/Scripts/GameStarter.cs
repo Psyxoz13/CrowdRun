@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class GameStarter : MonoBehaviour
 {
@@ -18,5 +15,10 @@ public class GameStarter : MonoBehaviour
     private void Start()
     {
         Observer.Instance.OnLoadMainMenu();
+    }
+
+    public void StartGame()
+    {
+        Observer.Instance.OnStartGame?.Invoke();
     }
 }

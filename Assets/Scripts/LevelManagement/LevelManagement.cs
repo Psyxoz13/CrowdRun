@@ -6,6 +6,13 @@ public class LevelManagement : MonoBehaviour
     public int CurrentLevelIndex;
     public List<Level> Levels = new List<Level>();
 
+    public static LevelManagement Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
+
     public void SelectLevel(int levelIndex)
     {
         levelIndex = GetCorrectedIndex(levelIndex);

@@ -1,9 +1,8 @@
 ﻿using UnityEngine;
-using UnityEngine.Events;
 
 public class LevelScore : MonoBehaviour
 {
-    [Readonly] public int Score;
+    public static int Score { get; private set; }
 
     public delegate void LevelScoreEvent(int score);
     public static event LevelScoreEvent OnAddScore;
