@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 758247408889249400}
   - component: {fileID: 6748279178920485990}
   - component: {fileID: 7829963867509570228}
-  - component: {fileID: 7449737226188098391}
+  - component: {fileID: 8572759580911128330}
   - component: {fileID: 1773796823769415765}
   m_Layer: 0
   m_Name: BonusLine (5)
@@ -620,8 +620,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7449737226188098391
-MeshCollider:
+--- !u!65 &8572759580911128330
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -630,10 +630,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &1773796823769415765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -647,6 +646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 5
+  _isStoping: 1
 --- !u!1 &1328517758011065837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1630,7 +1630,7 @@ GameObject:
   - component: {fileID: 3596858029780264494}
   - component: {fileID: 5112676889148509481}
   - component: {fileID: 26716832107351522}
-  - component: {fileID: 7991087996986189377}
+  - component: {fileID: 1130131642900608733}
   - component: {fileID: 1303446406625366822}
   m_Layer: 0
   m_Name: BonusLine (7)
@@ -1704,8 +1704,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7991087996986189377
-MeshCollider:
+--- !u!65 &1130131642900608733
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1714,10 +1714,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &1303446406625366822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1731,6 +1730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 7
+  _isStoping: 1
 --- !u!1 &4453576983416292494
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,7 +1904,7 @@ GameObject:
   - component: {fileID: 3117826844824993298}
   - component: {fileID: 9039546013829081771}
   - component: {fileID: 3722586489435371577}
-  - component: {fileID: 7010511728860127866}
+  - component: {fileID: 6507575019530008299}
   - component: {fileID: 4126454782913385885}
   m_Layer: 0
   m_Name: BonusLine (1)
@@ -1978,8 +1978,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &7010511728860127866
-MeshCollider:
+--- !u!65 &6507575019530008299
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1988,10 +1988,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &4126454782913385885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2005,6 +2004,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 1
+  _isStoping: 1
 --- !u!1 &4728112188427034127
 GameObject:
   m_ObjectHideFlags: 0
@@ -2097,7 +2097,7 @@ GameObject:
   - component: {fileID: 4766789835050216073}
   - component: {fileID: 5365468710331443203}
   - component: {fileID: 3335715144848418850}
-  - component: {fileID: 6723312926648106406}
+  - component: {fileID: 4619084715480771011}
   - component: {fileID: 2314666153798800075}
   m_Layer: 0
   m_Name: BonusLine (4)
@@ -2171,8 +2171,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &6723312926648106406
-MeshCollider:
+--- !u!65 &4619084715480771011
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2181,10 +2181,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &2314666153798800075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2198,6 +2197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 4
+  _isStoping: 1
 --- !u!1 &4832785643513921960
 GameObject:
   m_ObjectHideFlags: 0
@@ -2371,7 +2371,7 @@ GameObject:
   - component: {fileID: 6118988918969025700}
   - component: {fileID: 5261898403396547168}
   - component: {fileID: 1613060730186976828}
-  - component: {fileID: 8518462753238741609}
+  - component: {fileID: 1872046241411908453}
   - component: {fileID: 4787125392928298509}
   m_Layer: 0
   m_Name: BonusLine (8)
@@ -2445,8 +2445,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8518462753238741609
-MeshCollider:
+--- !u!65 &1872046241411908453
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2455,10 +2455,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &4787125392928298509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2472,6 +2471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 8
+  _isStoping: 1
 --- !u!1 &5264308307950948590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2483,7 +2483,7 @@ GameObject:
   - component: {fileID: 1958083700591461775}
   - component: {fileID: 7758480908678860412}
   - component: {fileID: 4733742739585451188}
-  - component: {fileID: 5027189267229432618}
+  - component: {fileID: 2408093150987582232}
   - component: {fileID: 6350196482520474895}
   m_Layer: 0
   m_Name: BonusLine (9)
@@ -2557,8 +2557,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5027189267229432618
-MeshCollider:
+--- !u!65 &2408093150987582232
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2567,10 +2567,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &6350196482520474895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2584,6 +2583,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 9
+  _isStoping: 1
 --- !u!1 &5381480932578863274
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,7 +2919,7 @@ GameObject:
   - component: {fileID: 7352213485227022617}
   - component: {fileID: 1295954769018155754}
   - component: {fileID: 2313016955151952481}
-  - component: {fileID: 250715214981550351}
+  - component: {fileID: 6311965538015808875}
   - component: {fileID: 7003927210220040708}
   m_Layer: 0
   m_Name: BonusLine (3)
@@ -2993,8 +2993,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &250715214981550351
-MeshCollider:
+--- !u!65 &6311965538015808875
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3003,10 +3003,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &7003927210220040708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3020,6 +3019,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 3
+  _isStoping: 1
 --- !u!1 &6104025491237488494
 GameObject:
   m_ObjectHideFlags: 0
@@ -3274,7 +3274,7 @@ GameObject:
   - component: {fileID: 5275954184982732827}
   - component: {fileID: 4319526100981831897}
   - component: {fileID: 2985521155978690530}
-  - component: {fileID: 5227706455825533066}
+  - component: {fileID: 2152310156041883419}
   - component: {fileID: 7102019703988505896}
   m_Layer: 0
   m_Name: BonusLine (10)
@@ -3348,8 +3348,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &5227706455825533066
-MeshCollider:
+--- !u!65 &2152310156041883419
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3358,10 +3358,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &7102019703988505896
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3375,6 +3374,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 10
+  _isStoping: 0
 --- !u!1 &7171861266720890531
 GameObject:
   m_ObjectHideFlags: 0
@@ -3710,7 +3710,7 @@ GameObject:
   - component: {fileID: 5897433082015075581}
   - component: {fileID: 5302571827649388154}
   - component: {fileID: 5265051540424349440}
-  - component: {fileID: 8813890009829740986}
+  - component: {fileID: 1101217422316034994}
   - component: {fileID: 7709974856496531606}
   m_Layer: 0
   m_Name: BonusLine (6)
@@ -3784,8 +3784,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &8813890009829740986
-MeshCollider:
+--- !u!65 &1101217422316034994
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3794,10 +3794,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &7709974856496531606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3811,6 +3810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 6
+  _isStoping: 1
 --- !u!1 &7627276363962423115
 GameObject:
   m_ObjectHideFlags: 0
@@ -4146,7 +4146,7 @@ GameObject:
   - component: {fileID: 1061750942824995589}
   - component: {fileID: 6795011372738495584}
   - component: {fileID: 7117358538482720143}
-  - component: {fileID: 1907997307141235738}
+  - component: {fileID: 2423443037775355262}
   - component: {fileID: 9069576740386732266}
   m_Layer: 0
   m_Name: BonusLine (2)
@@ -4220,8 +4220,8 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!64 &1907997307141235738
-MeshCollider:
+--- !u!65 &2423443037775355262
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4230,10 +4230,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 1
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+  serializedVersion: 2
+  m_Size: {x: 10.000001, y: 1, z: 3}
+  m_Center: {x: 0, y: 0.5, z: 2}
 --- !u!114 &9069576740386732266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4247,6 +4246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _multiplier: 2
+  _isStoping: 1
 --- !u!1 &8262982033125101690
 GameObject:
   m_ObjectHideFlags: 0

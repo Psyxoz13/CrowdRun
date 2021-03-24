@@ -12,6 +12,11 @@ public class Crowd : MonoBehaviour
 
     public List<CrowdUnit> Units = new List<CrowdUnit>();
 
+    [Header("Links")]
+    public SplineFollower SplineFollower;
+    public Control Control;
+
+    [Space]
     [SerializeField] private Transform _crowdUnits;
     [SerializeField] private float _unitsRotateSpeed = 3f;
     [SerializeField] private float _unitsForwardSpeed = 3f;

@@ -931,6 +931,7 @@ MonoBehaviour:
         m_CallState: 2
   Units:
   - {fileID: 8358098138439008103}
+  SplineFollower: {fileID: 8358098139250789358}
   _crowdUnits: {fileID: 8358098138335793475}
   _unitsRotateSpeed: 5
   _unitsForwardSpeed: 1

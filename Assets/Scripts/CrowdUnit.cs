@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Animator))]
 public class CrowdUnit : MonoBehaviour
@@ -114,6 +116,28 @@ public class CrowdUnit : MonoBehaviour
     public void SetRunAnimation()
     {
         _animator.SetTrigger("SetRun");
+    }
+
+    public void SetDancing()
+    {
+        _animator.SetTrigger("SetDancing");
+    }
+
+    public void Rotate(float angle)
+    {
+        StartCoroutine(GetRotate(angle));
+    }
+
+    private IEnumerator GetRotate(float angle)
+    {
+        while (true)
+        {
+            transform.eulerAngles = Vector3.Lerp(
+                transform.eulerAngles,
+                Vector3.up * angle,
+                3f * Time.deltaTime);
+            yield return null;
+        }
     }
 
     private void SetCrashed()
