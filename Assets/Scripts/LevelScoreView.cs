@@ -8,8 +8,12 @@ public class LevelScoreView : MonoBehaviour
 
     private void Awake()
     {
-        _textField = GetComponent<Text>();
         LevelScore.OnAddScore += UpdateText;
+    }
+
+    private void OnEnable()
+    {
+        _textField = GetComponent<Text>();
     }
 
     private void UpdateText(int score)

@@ -187,7 +187,7 @@ public class Crowd : MonoBehaviour
         FollowCamera.SetUnitsCount(Units.Count);
         FollowCamera.SetFollowTarget(Units[0].transform);
 
-        PlusOneText.Instance.Show(Units[0].transform.position);
+        PlusOnePool.Instance.Show(Units[0].transform.position);
 
         OnUnitAdded?.Invoke();
     }
