@@ -70,7 +70,7 @@ public class CrowdUnit : MonoBehaviour
             _hitEffect.Play(true);
 
             SetCrashed();
-            RemoveUnit();
+            RemoveUnit(collision.transform.parent);
         }
     }
 
@@ -78,7 +78,7 @@ public class CrowdUnit : MonoBehaviour
     {
         if (other.CompareTag("Obstacle"))
         {
-            RemoveUnit();
+            RemoveUnit(other.transform.parent);
         }
     }
 
@@ -145,10 +145,10 @@ public class CrowdUnit : MonoBehaviour
         _animator.SetTrigger("SetCrash");
     }
 
-    private void RemoveUnit()
+    private void RemoveUnit(Transform newParent)
     {
         Crowd.RemoveUnit(this);
-        transform.parent = null;
+        transform.parent = newParent;
         IsDead = true;
     }
 }
