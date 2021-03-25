@@ -146,7 +146,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_EC0D7ECA: {r: 0.34362763, g: 0.5028081, b: 0.6226415, a: 0}
-    - _BaseColor: {r: 1, g: 0.24056602, b: 0.24056602, a: 1}
+    - _BaseColor: {r: 1, g: 0.5613208, b: 0.5613208, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 0.8962264, g: 0.8962264, b: 0.8962264, a: 1}
