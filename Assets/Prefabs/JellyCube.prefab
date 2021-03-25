@@ -14547,7 +14547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06546458e261f9f469041f6267baef59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _jumpZone: {fileID: 0}
 --- !u!95 &321846502028914998
 Animator:
   serializedVersion: 3
