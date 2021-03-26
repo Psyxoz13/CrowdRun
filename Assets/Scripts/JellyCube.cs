@@ -3,8 +3,9 @@
 [RequireComponent(typeof(Collider))]
 public class JellyCube : MonoBehaviour
 {
-    private JellyCubesRow _parentRow;
+    [SerializeField] private Collider _cubeColider;
 
+    private JellyCubesRow _parentRow;
     private Collider _collider;
     private Animator _animator;
     private bool _exploding = true;
@@ -37,6 +38,7 @@ public class JellyCube : MonoBehaviour
     public void SetExplosion()
     {
         _collider.enabled = false;
+        _cubeColider.enabled = false;
         _animator.SetTrigger("SetBoom");
     }
 
