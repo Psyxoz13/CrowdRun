@@ -6,11 +6,19 @@ using UnityEngine;
 public class LevelManagementEditor : Editor
 {
     private LevelManagement _levelManagement;
+    private GUIStyle _titleStyle;
+    private GUIStyle _addButtonStyle;
+
     private int _prevIndex;
+    private bool _isHided;
 
     private void OnEnable()
     {
         _levelManagement = target as LevelManagement;
+
+        SetTitleStyle();
+
+        _addButtonStyle = GUI.skin.button;
     }
 
     public override void OnInspectorGUI()
@@ -21,6 +29,16 @@ public class LevelManagementEditor : Editor
         {
             SetDirty(_levelManagement.gameObject);
         }
+    }
+
+    private void SetTitleStyle()
+    {
+        _titleStyle = new GUIStyle
+        {
+            fontSize = 24,
+            fontStyle = FontStyle.Bold
+        };
+        _titleStyle.normal.textColor = new Color(.8f, .8f, .8f);
     }
 
     private void DrawLevels()
@@ -34,7 +52,7 @@ public class LevelManagementEditor : Editor
         EditorGUILayout.BeginHorizontal();
 
         var index = EditorGUILayout.IntField(
-            "Current Index",
+            "Level Index",
             _levelManagement.CurrentLevelIndex);
 
         if (GUILayout.Button("<<", GUILayout.Width(30), GUILayout.Height(20)))
@@ -58,28 +76,56 @@ public class LevelManagementEditor : Editor
 
     private void DrawLevelsList()
     {
-        EditorGUILayout.BeginHorizontal("box");
+        EditorGUILayout.BeginHorizontal();
 
-        GUILayout.Label("Levels");
+        GUILayout.Label("Levels", _titleStyle);
 
-        if (GUILayout.Button("Add", GUILayout.Width(40), GUILayout.Height(25)))
+        if (_isHided == false)
         {
-            _levelManagement.Levels.Add(new Level());
+            if (GUILayout.Button("Add", GUILayout.Width(45), GUILayout.Height(25)))
+            {
+                _levelManagement.Levels.Add(new Level());
+            }
+        }
+
+        GUILayout.Space(3);
+
+
+        if (_isHided)
+        {
+            if (GUILayout.Button("Show", GUILayout.Width(45), GUILayout.Height(25)))
+            {
+                _isHided = false;
+            }
+        }
+        else
+        {
+            if (GUILayout.Button("Hide", GUILayout.Width(45), GUILayout.Height(25)))
+            {
+                _isHided = true;
+            }
         }
 
         EditorGUILayout.EndHorizontal();
 
-
-        if (_levelManagement.Levels.Count > 0)
+        if (_levelManagement.Levels.Count > 0 && _isHided == false)
         {
             for (int i = 0; i < _levelManagement.Levels.Count; i++)
             {
                 Level level = _levelManagement.Levels[i];
 
-                EditorGUILayout.BeginVertical("box");
+                if (i == _levelManagement.CurrentLevelIndex)
+                {
+                    Color cachedColor = GUI.color;
+                    GUI.color = new Color(.35f, .35f, .4f);
+                    EditorGUILayout.BeginVertical("box");
+                    GUI.color = cachedColor;
+                }
+                else
+                    EditorGUILayout.BeginVertical("box");
 
                 level.LevelObject = (GameObject)EditorGUILayout.ObjectField(
-                    new GUIContent("Level Prefab"),
+                    new GUIContent("Level Object"),
                     _levelManagement.Levels[i].LevelObject,
                     typeof(GameObject));
 
@@ -97,21 +143,25 @@ public class LevelManagementEditor : Editor
 
                 GUILayout.FlexibleSpace();
 
-                if (GUILayout.Button("Remove", GUILayout.Width(55), GUILayout.Height(25)))
-                {
-                    _levelManagement.Levels.Remove(level);
-                }
-
-                if (GUILayout.Button("Clear", GUILayout.Width(50), GUILayout.Height(25)))
+                if (GUILayout.Button("Clear", GUILayout.Width(45), GUILayout.Height(25)))
                 {
                     _levelManagement.Levels.RemoveAt(i);
                     _levelManagement.Levels.Insert(i, new Level());
+                }
+
+                GUILayout.Space(3);
+
+                if (GUILayout.Button("Remove", GUILayout.Width(55), GUILayout.Height(25)))
+                {
+                    _levelManagement.Levels.Remove(level);
                 }
 
                 EditorGUILayout.EndHorizontal();
                 EditorGUILayout.EndVertical();
             }
         }
+
+
     }
 
     private void SetDirty(GameObject gameObject)

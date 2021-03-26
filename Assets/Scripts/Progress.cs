@@ -14,9 +14,30 @@ public class Progress : MonoBehaviour
         }
     }
 
+    private bool _isGameEnded;
+
     private void Awake()
     {
+        LevelManagement.Instance.SelectLevel(LastLevelIndex);
+
         LevelManagement.Instance.OnLevelChanged += (levelIndex) => 
             LastLevelIndex = levelIndex;
+    }
+
+    public void LoadNextLevel()
+    {
+        if (LevelManagement.Instance.HasNextLevel == false)
+        {
+            _isGameEnded = true;
+        }
+
+        if (_isGameEnded)
+        {
+            LevelManagement.Instance.SelectRandomLevel();
+        }
+        else
+        {
+            LevelManagement.Instance.NextLevel();
+        }
     }
 }

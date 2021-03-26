@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class LevelManagement : MonoBehaviour
 {
     public int CurrentLevelIndex;
+    public Level SelectedLevel;
+
+    public bool HasNextLevel => CurrentLevelIndex < Levels.Count - 1;
 
     public delegate void LevelManagmentEvents(int level);
     public event LevelManagmentEvents OnLevelChanged;
@@ -16,8 +19,6 @@ public class LevelManagement : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-
-        SelectLevel(Progress.LastLevelIndex);
     }
 
     public void SelectLevel(int levelIndex)
@@ -30,6 +31,7 @@ public class LevelManagement : MonoBehaviour
         {
             SelLevelParams(level);
 
+            SelectedLevel = level;
             CurrentLevelIndex = levelIndex;
         }
 
@@ -106,5 +108,5 @@ public class LevelManagement : MonoBehaviour
 public class Level
 {
     public GameObject LevelObject;
-    public Material SkyboxMaterial; 
+    public Material SkyboxMaterial;
 }

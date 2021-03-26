@@ -12,6 +12,11 @@ public class LevelScore : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int AddScoreCount = 1;
 
+    private void OnEnable()
+    {
+        Score = 0;
+    }
+
     public void AddScore()
     {
         Score += AddScoreCount;
