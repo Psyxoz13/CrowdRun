@@ -1,9 +1,14 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelManagement : MonoBehaviour
 {
     public int CurrentLevelIndex;
+
+    public delegate void LevelManagmentEvents(int level);
+    public event LevelManagmentEvents OnLevelChanged;
+
     public List<Level> Levels = new List<Level>();
 
     public static LevelManagement Instance;
@@ -11,6 +16,8 @@ public class LevelManagement : MonoBehaviour
     private void Awake()
     {
         Instance = this;
+
+        SelectLevel(Progress.LastLevelIndex);
     }
 
     public void SelectLevel(int levelIndex)
@@ -25,6 +32,8 @@ public class LevelManagement : MonoBehaviour
 
             CurrentLevelIndex = levelIndex;
         }
+
+        OnLevelChanged?.Invoke(levelIndex);
     }
 
     public void SelectLevel(Level level)
