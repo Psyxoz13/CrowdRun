@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class LevelManagement : MonoBehaviour
@@ -58,6 +57,11 @@ public class LevelManagement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         SelectLevel(CurrentLevelIndex);
+    }
+
+    public void SelectRandomLevel()
+    {
+        SelectLevel(Random.Range(0, Levels.Count));
     }
 
     private int GetCorrectedIndex(int levelIndex)

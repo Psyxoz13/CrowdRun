@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using TMPro;
+using UnityEngine;
 
 [RequireComponent(typeof(Collider), typeof(MeshRenderer))]
 public class BonusLine : MonoBehaviour
@@ -6,8 +7,19 @@ public class BonusLine : MonoBehaviour
     [SerializeField] private float _multiplier = 1f;
     [SerializeField] private bool _isStoping = true;
 
+    [Header("Text")]
+    [SerializeField] private TextMeshPro _multiplierText;
+    [SerializeField] private Color _color;
+    [SerializeField] private Color _activatedColor;
+
     private Material _material;
     private Collider _trigger;
+
+    private void OnValidate()
+    {
+        _multiplierText.text = "x" + _multiplier.ToString("0.0").Replace(',', '.');
+        _multiplierText.color = _color;
+    }
 
     private void Awake()
     {
@@ -21,6 +33,7 @@ public class BonusLine : MonoBehaviour
         {
             _material.SetInt("_IsActivated", 1);
             _trigger.enabled = false;
+            _multiplierText.color = _activatedColor;
 
             SetScoreMultiplier();
 
