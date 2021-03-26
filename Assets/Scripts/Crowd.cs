@@ -45,8 +45,8 @@ public class Crowd : MonoBehaviour
 
     private void Start()
     {
-        FollowCamera.SetFollowTarget(Units[0].transform);
-        FollowCamera.SetUnitsCount(Units.Count);
+        FollowCamera.Instance.SetFollowTarget(Units[0].transform);
+        FollowCamera.Instance.SetOffset(Units.Count);
     }
 
     private void Update()
@@ -88,13 +88,13 @@ public class Crowd : MonoBehaviour
         
         if (isFinished)
         {
-            FollowCamera.SetUnitsCount(0);
-            FollowCamera.SetFollowTarget(transform);
+            FollowCamera.Instance.SetOffset(0);
+            FollowCamera.Instance.SetFollowTarget(transform);
         }
         else
         {
-            FollowCamera.SetUnitsCount(Units.Count);
-            FollowCamera.SetFollowTarget(Units[0].transform);
+            FollowCamera.Instance.SetOffset(Units.Count);
+            FollowCamera.Instance.SetFollowTarget(Units[0].transform);
         }
     }
 
@@ -184,8 +184,8 @@ public class Crowd : MonoBehaviour
         crowdUnit.Crowd = this;
         crowdUnit.transform.parent = _crowdUnits;
 
-        FollowCamera.SetUnitsCount(Units.Count);
-        FollowCamera.SetFollowTarget(Units[0].transform);
+        FollowCamera.Instance.SetOffset(Units.Count);
+        FollowCamera.Instance.SetFollowTarget(Units[0].transform);
 
         PlusOnePool.Instance.Show(Units[0].transform.position);
 

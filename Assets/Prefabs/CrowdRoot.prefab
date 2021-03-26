@@ -1221,6 +1221,7 @@ MonoBehaviour:
   _startOffset: {x: 0, y: 9, z: -13}
   _followSpeed: 2
   _unitOffset: {x: 0, y: 0.25, z: -1.1}
+  _focusOffset: {x: 0, y: 2, z: -6}
 --- !u!1 &8358098138147698625
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,6 +32,7 @@ public class BonusLine : MonoBehaviour
                 crowdUnit.SetDancing();
                 crowdUnit.Rotate(180f);
                 MenuState.SetState("SetWin");
+                FollowCamera.Instance.SetFocus(crowdUnit.transform);
             }
         }
     }

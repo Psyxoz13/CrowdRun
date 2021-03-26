@@ -25,6 +25,7 @@ public class FinishTrigger : MonoBehaviour
             crowdUnit.Rotate(180);
 
             MenuState.SetState("SetWin");
+            FollowCamera.Instance.SetFocus(crowdUnit.transform);
 
             _trigger.enabled = false;
 

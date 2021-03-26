@@ -2,26 +2,46 @@
 
 public class FollowCamera : MonoBehaviour
 {
+    public static FollowCamera Instance;
+
     [SerializeField] private Vector3 _startOffset;
     [SerializeField] private float _followSpeed = 5f;
     [SerializeField] private Vector3 _unitOffset;
 
-    private static Transform _target;
-    private static int _unitsCount;
+    [Header("Focus")]
+    [SerializeField] private Vector3 _focusOffset;
+
+    private Transform _target;
+    private Vector3 _offset;
+    private Quaternion _rotation;
+
+    private void Awake()
+    {
+        Instance = this;
+
+        _rotation = transform.localRotation;
+    }
 
     public void Update()
     {
         Follow();
     }
 
-    public static void SetFollowTarget(Transform target)
+    public void SetFollowTarget(Transform target)
     {
         _target = target;
     }
 
-    public static void SetUnitsCount(int count)
+    public void SetFocus(Transform target)
     {
-        _unitsCount = count;
+        _target = target;
+        _rotation = Quaternion.identity;
+        _startOffset = _focusOffset;
+    }
+
+    public void SetOffset(int unitsCount)
+    {
+        _offset = _unitOffset * unitsCount;
     }
 
     public void Stop()
@@ -31,9 +51,8 @@ public class FollowCamera : MonoBehaviour
 
     private void Follow()
     {
-        var offset = _unitOffset * _unitsCount;
         var moveVector = _startOffset
-            + offset 
+            + _offset
             + new Vector3(
                 0f,
                 0f,
@@ -42,6 +61,11 @@ public class FollowCamera : MonoBehaviour
         transform.localPosition = Vector3.Lerp(
             transform.localPosition,
            moveVector,
+            _followSpeed * Time.deltaTime);
+
+        transform.localRotation = Quaternion.Lerp(
+            transform.localRotation,
+            _rotation,
             _followSpeed * Time.deltaTime);
     }
 }
