@@ -2311,6 +2311,11 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f82e7c3b0db53864f8ea97d9645c1d0f, type: 2}
     - target: {fileID: 3372780213569065310, guid: 497755e71fb6bc543839cb3a46433297,
         type: 3}
+      propertyPath: _isStoping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3372780213569065310, guid: 497755e71fb6bc543839cb3a46433297,
+        type: 3}
       propertyPath: _multiplier
       value: 10
       objectReference: {fileID: 0}
