@@ -7,7 +7,6 @@ public class LevelManagementEditor : Editor
 {
     private LevelManagement _levelManagement;
     private GUIStyle _titleStyle;
-    private GUIStyle _addButtonStyle;
 
     private int _prevIndex;
     private bool _isHided;
@@ -17,8 +16,6 @@ public class LevelManagementEditor : Editor
         _levelManagement = target as LevelManagement;
 
         SetTitleStyle();
-
-        _addButtonStyle = GUI.skin.button;
     }
 
     public override void OnInspectorGUI()

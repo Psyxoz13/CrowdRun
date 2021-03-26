@@ -18,7 +18,10 @@ public class Progress : MonoBehaviour
 
     private void Awake()
     {
-        LevelManagement.Instance.SelectLevel(LastLevelIndex);
+        if (Application.isEditor == false)
+        {
+            LevelManagement.Instance.SelectLevel(LastLevelIndex);
+        }
 
         LevelManagement.Instance.OnLevelChanged += (levelIndex) => 
             LastLevelIndex = levelIndex;
