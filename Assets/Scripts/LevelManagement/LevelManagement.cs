@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
 
 public class LevelManagement : MonoBehaviour
 {
@@ -50,6 +51,13 @@ public class LevelManagement : MonoBehaviour
     public void PrevLevel()
     {
         SelectLevel(--CurrentLevelIndex);
+    }
+
+    public void RestartLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        SelectLevel(CurrentLevelIndex);
     }
 
     private int GetCorrectedIndex(int levelIndex)

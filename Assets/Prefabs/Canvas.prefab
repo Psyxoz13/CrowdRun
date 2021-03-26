@@ -364,6 +364,7 @@ GameObject:
   - component: {fileID: 3453005542759990343}
   - component: {fileID: 3453005542759990342}
   - component: {fileID: 3453005542759990341}
+  - component: {fileID: 743605320596260073}
   m_Layer: 5
   m_Name: RestartButton
   m_TagString: Untagged
@@ -471,7 +472,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2436030349089168496}
+      - m_Target: {fileID: 743605320596260073}
         m_MethodName: LoadScene
         m_Mode: 5
         m_Arguments:
@@ -482,6 +483,18 @@ MonoBehaviour:
           m_StringArgument: Game
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &743605320596260073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3453005542759990339}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3e3812f8ec8288439e5cdb27ed38d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3453005542902296141
 GameObject:
   m_ObjectHideFlags: 0
